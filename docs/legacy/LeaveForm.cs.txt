@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LeaveManagementSystem
+{
+    internal class LeaveForm
+    {
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // LeaveForm
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "LeaveForm";
+            this.Load += new System.EventHandler(this.LeaveForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void LeaveForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public partial class LeaveForm : Form
+    {
+        public LeaveForm()
+        {
+            InitializeComponent();
+
+            // Button to calculate remaining leaves
+            Button btn_CalculateLeaves = new Button();
+            btn_CalculateLeaves.Text = "Calculate Remaining Leaves";
+            btn_CalculateLeaves.Location = new Point(120, 60);
+
+            // Attach the event handler to the button's Click event
+            btn_CalculateLeaves.Click += new EventHandler(Remaining_Leaves_BY_ID_Click);
+
+            // Adding button to form
+            Controls.Add(btn_CalculateLeaves);
+        }
+
+        // Event handler method
+        private void Remaining_Leaves_BY_ID_Click(object sender, EventArgs e)
+        {
+            // Your existing code for leave calculation here
+            int currentYear = DateTime.Now.Year;
+            int currentMonth = DateTime.Now.Month;
+
+            // Employee ID comes from txt_EmployeeID TextBox
+            string EmployeeID = txt_EmployeeID.Text;
+
+            // Code to calculate remaining leaves...
+            // (as per your original code)
+        }
+
+        private void Remaining_Leaves_BY_ID_Click(object sender, EventArgs e)
+        {
+            // Your code to calculate leaves
+        }
+    }
+
+}
